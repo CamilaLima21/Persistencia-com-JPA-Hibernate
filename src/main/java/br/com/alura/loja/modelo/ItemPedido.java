@@ -32,6 +32,7 @@ public class ItemPedido {
 		super();
 		this.quantidade = quantidade;
 		this.pedido = pedido;
+		this.precoUnitario = produto.getPreco();
 		this.produto = produto;
 	}
 
