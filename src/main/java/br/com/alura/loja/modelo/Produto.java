@@ -23,6 +23,9 @@ public class Produto {
 	private LocalDate dataCadastro = LocalDate.now();
 	@ManyToOne
 	private Categoria categoria;	
+	
+	public Produto() {		
+	}	
 
 	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
 		this.nome = nome;
