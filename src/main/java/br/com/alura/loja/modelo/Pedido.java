@@ -2,12 +2,16 @@ package br.com.alura.loja.modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,12 +23,16 @@ public class Pedido {
 	private Long id;
 	private BigDecimal valorTotal;
 	private LocalDate data = LocalDate.now();
+
 	@ManyToOne
-	private Cliente cliente;	
-	
-	public Pedido() {		
-	}	
-	
+	private Cliente cliente;
+
+	@OneToMany
+	private List<ItemPedido> itens;
+
+	public Pedido() {
+	}
+
 	public Pedido(Cliente cliente) {
 		this.cliente = cliente;
 	}
@@ -60,5 +68,5 @@ public class Pedido {
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
-	
+
 }
