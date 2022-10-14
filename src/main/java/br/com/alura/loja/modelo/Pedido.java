@@ -22,8 +22,10 @@ public class Pedido {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@Column(name="valor_total")
 	private BigDecimal valorTotal = BigDecimal.ZERO;
+	
 	private LocalDate data = LocalDate.now();
 
 	@ManyToOne
