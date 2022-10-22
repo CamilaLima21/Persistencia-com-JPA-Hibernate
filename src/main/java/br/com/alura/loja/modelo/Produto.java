@@ -16,8 +16,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "produtos")
-@NamedQuery(name= "Produto.produtosPorCategoria", query= "SELECT p FROM Produto p WHERE p.categoria.nome = :nome")
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // JOINED (FAZ O JOIN ENTRE AS TABELAS) - SINGLE_TABLE (FAZ A HERANÇA DAS CLASSES E TABELAS)
+@NamedQuery(name= "Produto.produtosPorCategoria", query= "SELECT p FROM Produto p WHERE p.categoria.id.nome = :nome")
+@Inheritance(strategy = InheritanceType.JOINED) // JOINED (FAZ O JOIN ENTRE AS TABELAS) - SINGLE_TABLE (FAZ A HERANÇA DAS CLASSES E TABELAS)
 public class Produto {
 
 	@Id
